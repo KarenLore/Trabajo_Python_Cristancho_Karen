@@ -1,0 +1,30 @@
+[
+    {
+        "fecha": "2024-08-08 16:39:55",
+        "proveedor": {
+            "nombre": "fdsg",
+            "contacto": "5131654651"
+        },
+        "productos": [
+            {
+                "nombre": "gdg",
+                "cantidad": 5,
+                "precio_compra": 555.0
+            }
+        ]
+    },
+    {
+        "fecha": "2024-08-08 16:40:32",
+        "proveedor": {
+            "nombre": "fgf",
+            "contacto": "454"
+        },
+        "productos": [
+            {
+                "nombre": "hfhg",
+                "cantidad": 5,
+                "precio_compra": 45.0
+            }
+        ]
+    }
+]
