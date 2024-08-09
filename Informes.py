@@ -1,47 +1,12 @@
 import csv
 from datetime import datetime
 
+# Ejemplo de datos de ventas
 ventas = [
     {"fecha": "2024-08-01", "producto": "Pan", "cantidad": 10, "precio": 20},
 ]
 
-stock = [
-    {"producto": "Pan", "cantidad": 50},
-]
-
-def generar_informe_ventas():
-    """Genera un informe de ventas y lo guarda en un archivo CSV."""
-    fecha = datetime.now().strftime("%Y-%m-%d")
-    archivo = f"informe_ventas_{fecha}.csv"
-    
-    with open(archivo, 'w', newline='') as csvfile:
-        fieldnames = ["fecha", "producto", "cantidad", "precio"]
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        
-        writer.writeheader()
-        for venta in ventas:
-            writer.writerow(venta)
-    
-    print(f"Informe de ventas generado: {archivo}")
-
-def generar_informe_stock():
-    """Genera un informe de stock y lo guarda en un archivo CSV."""
-    fecha = datetime.now().strftime("%Y-%m-%d")
-    archivo = f"informe_stock_{fecha}.csv"
-    
-    with open(archivo, 'w', newline='') as csvfile:
-        fieldnames = ["producto", "cantidad"]
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        
-        writer.writeheader()
-        for item in stock:
-            writer.writerow(item)
-    
-    print(f"Informe de stock generado: {archivo}")
-
-import csv
-from datetime import datetime
-
+# Ejemplo de datos de stock
 stock = [
     {"producto": "Pan", "cantidad": 20},
     {"producto": "Pan de Bono", "cantidad": 30},
@@ -80,8 +45,22 @@ stock = [
     {"producto": "Postres de Oreo", "cantidad": 20},
     {"producto": "Pan con Salchicha y 1 Pony Malta", "cantidad": 26},
     {"producto": "Postre de Oreo y 1 Budweiser", "cantidad": 35},
-
 ]
+
+def generar_informe_ventas():
+    """Genera un informe de ventas y lo guarda en un archivo CSV."""
+    fecha = datetime.now().strftime("%Y-%m-%d")
+    archivo = f"informe_ventas_{fecha}.csv"
+    
+    with open(archivo, 'w', newline='') as csvfile:
+        fieldnames = ["fecha", "producto", "cantidad", "precio"]
+        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+        
+        writer.writeheader()
+        for venta in ventas:
+            writer.writerow(venta)
+    
+    print(f"Informe de ventas generado: {archivo}")
 
 def generar_informe_stock():
     """Genera un informe de stock y lo guarda en un archivo CSV."""
@@ -99,4 +78,5 @@ def generar_informe_stock():
     print(f"Informe de stock generado: {archivo}")
 
 if __name__ == "__main__":
+    generar_informe_ventas()
     generar_informe_stock()

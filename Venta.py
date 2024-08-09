@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 
 def registrar_venta():
-    venta = {
+    venta = [],{
         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "cliente": {
             "nombre": input("Nombre del cliente: "),
@@ -62,9 +62,19 @@ def registrar_venta():
             else:
                 print("El producto ingresado no existe en la categoría seleccionada.")
 
-        with open('ventas.json', 'a') as file:
-            json.dump(venta, file, indent=4)
-            file.write("\n")
+        # Cargar ventas existentes del archivo JSON
+        try:
+            with open('ventas.json', 'r') as file:
+                ventas = json.load(file)
+        except (FileNotFoundError, json.JSONDecodeError):
+            ventas = []
+
+        # Agregar la nueva venta a la lista de ventas
+        ventas.append(venta)
+
+        # Guardar la lista actualizada de ventas en el archivo JSON
+        with open('ventas.json', 'w') as file:
+            json.dump(ventas, file, indent=4)
 
         print("Venta registrada exitosamente.")
     else:
@@ -107,7 +117,6 @@ productos = {
         "Sprite": 3200,
         "Monster": 3000,
         "Tropicana": 2400,
-        "-Promociones-": "Algunas promociones de la sección de Bebidas",
         "1 Pan con Salchicha y 1 Pony Malta": 3000,
         "1 Postre de Oreo y 1 Budweiser": 9000
     },

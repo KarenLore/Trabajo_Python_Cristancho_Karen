@@ -1,18 +1,54 @@
-{
-    "fecha": "2024-08-09 08:56:38",
+[{
+    "fecha": "2024-08-09 09:55:55",
     "cliente": {
-        "nombre": "dayana",
-        "direccion": "miraflores"
+        "nombre": "Karen",
+        "direccion": "Miraflores"
     },
     "empleado": {
-        "nombre": "karen",
-        "cargo": "cajera"
+        "nombre": "Lorena",
+        "cargo": "Administrador"
     },
     "productos": [
         {
             "nombre": "Pan de Yuca",
-            "cantidad": 10,
+            "cantidad": 2,
             "precio": 800
         }
     ]
 }
+,{
+    "fecha": "2024-08-09 09:56:21",
+    "cliente": {
+        "nombre": "Dayana",
+        "direccion": "Delicias"
+    },
+    "empleado": {
+        "nombre": "Lucia",
+        "cargo": "Gerente"
+    },
+    "productos": [
+        {
+            "nombre": "Pan de Queso",
+            "cantidad": 5,
+            "precio": 800
+        }
+    ]
+},{
+    "fecha": "2024-08-09 09:57:21",
+    "cliente": {
+        "nombre": "Lucia",
+        "direccion": "San Mart\u00edn"
+    },
+    "empleado": {
+        "nombre": "Kar",
+        "cargo": "Cocinero"
+    },
+    "productos": [
+        {
+            "nombre": "Pan de Yuca",
+            "cantidad": 7,
+            "precio": 800
+        }
+    ]
+}
+]
