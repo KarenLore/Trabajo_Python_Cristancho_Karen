@@ -1,54 +1,74 @@
-[{
-    "fecha": "2024-08-09 09:55:55",
-    "cliente": {
-        "nombre": "Karen",
-        "direccion": "Miraflores"
+[
+    {
+        "fecha": "2024-08-09 09:55:55",
+        "cliente": {
+            "nombre": "Karen",
+            "direccion": "Miraflores"
+        },
+        "empleado": {
+            "nombre": "Lorena",
+            "cargo": "Administrador"
+        },
+        "productos": [
+            {
+                "nombre": "Pan de Yuca",
+                "cantidad": 2,
+                "precio": 800
+            }
+        ]
     },
-    "empleado": {
-        "nombre": "Lorena",
-        "cargo": "Administrador"
+    {
+        "fecha": "2024-08-09 09:56:21",
+        "cliente": {
+            "nombre": "Dayana",
+            "direccion": "Delicias"
+        },
+        "empleado": {
+            "nombre": "Lucia",
+            "cargo": "Gerente"
+        },
+        "productos": [
+            {
+                "nombre": "Pan de Queso",
+                "cantidad": 5,
+                "precio": 800
+            }
+        ]
     },
-    "productos": [
-        {
-            "nombre": "Pan de Yuca",
-            "cantidad": 2,
-            "precio": 800
-        }
-    ]
-}
-,{
-    "fecha": "2024-08-09 09:56:21",
-    "cliente": {
-        "nombre": "Dayana",
-        "direccion": "Delicias"
+    {
+        "fecha": "2024-08-09 09:57:21",
+        "cliente": {
+            "nombre": "Lucia",
+            "direccion": "San Mart\u00edn"
+        },
+        "empleado": {
+            "nombre": "Kar",
+            "cargo": "Cocinero"
+        },
+        "productos": [
+            {
+                "nombre": "Pan de Yuca",
+                "cantidad": 7,
+                "precio": 800
+            }
+        ]
     },
-    "empleado": {
-        "nombre": "Lucia",
-        "cargo": "Gerente"
-    },
-    "productos": [
-        {
-            "nombre": "Pan de Queso",
-            "cantidad": 5,
-            "precio": 800
-        }
-    ]
-},{
-    "fecha": "2024-08-09 09:57:21",
-    "cliente": {
-        "nombre": "Lucia",
-        "direccion": "San Mart\u00edn"
-    },
-    "empleado": {
-        "nombre": "Kar",
-        "cargo": "Cocinero"
-    },
-    "productos": [
-        {
-            "nombre": "Pan de Yuca",
-            "cantidad": 7,
-            "precio": 800
-        }
-    ]
-}
+    {
+        "fecha": "2024-08-09 15:42:54",
+        "cliente": {
+            "nombre": "Karen",
+            "direccion": "Mira"
+        },
+        "empleado": {
+            "nombre": "fasf",
+            "cargo": "fdsf"
+        },
+        "productos": [
+            {
+                "nombre": "Pan de Yuca",
+                "cantidad": 10,
+                "precio": 800
+            }
+        ]
+    }
 ]

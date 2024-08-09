@@ -3,7 +3,7 @@ from Compra import registrar_compra
 from Informes import generar_informe_ventas, generar_informe_stock
 
 def main():
-    while True:
+    while True:    
         "#############BIENVENIDOS###############"
         print("\nMenú Principal PanCamp")
         print("1. Registrar Venta")

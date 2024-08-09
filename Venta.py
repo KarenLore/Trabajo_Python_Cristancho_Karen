@@ -2,7 +2,7 @@ import json
 from datetime import datetime
 
 def registrar_venta():
-    venta = [],{
+    venta = {
         "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         "cliente": {
             "nombre": input("Nombre del cliente: "),
@@ -35,7 +35,9 @@ def registrar_venta():
         print(f"\nCategoría seleccionada: {categoria_seleccionada}")
 
         while True:
-            producto = input("Nombre del producto: ").strip()
+            producto = input("Nombre del producto (o 'no' para terminar): ")
+            if producto.lower() == 'no':
+                break
 
             if producto in productos[categoria_seleccionada]:
                 precio = productos[categoria_seleccionada][producto]
@@ -55,26 +57,12 @@ def registrar_venta():
                     "cantidad": cantidad,
                     "precio": precio
                 })
-
-                agregar_otro = input("¿Deseas agregar otro producto? (s/n): ").strip().lower()
-                if agregar_otro != 's':
-                    break
             else:
                 print("El producto ingresado no existe en la categoría seleccionada.")
 
-        # Cargar ventas existentes del archivo JSON
-        try:
-            with open('ventas.json', 'r') as file:
-                ventas = json.load(file)
-        except (FileNotFoundError, json.JSONDecodeError):
-            ventas = []
-
-        # Agregar la nueva venta a la lista de ventas
-        ventas.append(venta)
-
-        # Guardar la lista actualizada de ventas en el archivo JSON
-        with open('ventas.json', 'w') as file:
-            json.dump(ventas, file, indent=4)
+        with open('ventas.json', 'a') as file:
+            json.dump(venta, file, indent=4)
+            file.write("\n")
 
         print("Venta registrada exitosamente.")
     else:
@@ -83,53 +71,50 @@ def registrar_venta():
 # Estructura actualizada de precios y categorías
 productos = {
     "Panaderia": {
-        "Pan de Bono": 700,
-        "Pan de Queso": 800,
-        "Pan Cascarita": 500,
-        "Pan de Yuca": 800,
-        "Calentano": 700,
-        "Rollito de Sal": 900,
-        "Pan Integral": 700,
-        "Pan relleno de Arequipe": 1150,
-        "Pan con Salchicha": 1300,
-        "Pan recubierto de Chocolate": 1200
+        "Pan de Bono": 70,
+        "Pan de Queso": 80,
+        "Pan Cascarita": 50,
+        "Pan de Yuca": 80,
+        "Calentano": 70,
+        "Rollito de Sal": 90,
+        "Pan Integral": 70,
+        "Pan relleno de Arequipe": 115,
+        "Pan con Salchicha": 130,
+        "Pan recubierto de Chocolate": 120
     },
     "Pasteleria": {
-        "Pastel de Vainilla": 5000,
-        "Pastel de Chocolate": 5500,
-        "Pastel de bodas": 10000,
-        "Glaseado de Vainilla": 3000,
-        "Glaseado de Chocolate": 3500,
-        "Pastel de Arequipe": 5700,
-        "Pastel de Oreo": 7000,
-        "Postre de Limón": 4300,
-        "Postre de Vainilla": 4000,
-        "Postre de Tres Leches": 4500
+        "Pastel de Vainilla": 500,
+        "Pastel de Chocolate": 550,
+        "Pastel de bodas": 100,
+        "Glaseado de Vainilla": 300,
+        "Glaseado de Chocolate": 350,
+        "Pastel de Arequipe": 570,
+        "Pastel de Oreo": 700,
+        "Postre de Limón": 430,
+        "Postre de Vainilla": 400,
+        "Postre de Tres Leches": 450
     },
     "Bebidas": {
-        "Coca-Cola": 3000,
-        "Pepsi": 2900,
-        "Red-Bull": 4000,
-        "Gatorade": 3700,
-        "Budweiser": 3200,
-        "Hit": 2500,
-        "Pony-Malta": 2300,
-        "Sprite": 3200,
-        "Monster": 3000,
-        "Tropicana": 2400,
-        "1 Pan con Salchicha y 1 Pony Malta": 3000,
-        "1 Postre de Oreo y 1 Budweiser": 9000
+        "Coca-Cola": 300,
+        "Pepsi": 290,
+        "Red-Bull": 400,
+        "Gatorade": 370,
+        "Budweiser": 320,
+        "Hit": 250,
+        "Pony-Malta": 230,
+        "Sprite": 320,
+        "Monster": 300,
+        "Tropicana": 240,
+        "-Promociones-": "Algunas promociones de la sección de Bebidas",
+        "1 Pan con Salchicha y 1 Pony Malta": 300,
+        "1 Postre de Oreo y 1 Budweiser": 900
     },
     "Apartado de promociones": {
-        "6 Panes Integrales": 4000,
-        "5 Panes recubiertos de Chocolate": 5500,
-        "3 Pasteles de Vainilla": 13000,
-        "4 Postres de Oreo": 25000,
-        "1 Pan con Salchicha y 1 Pony Malta": 3000,
-        "1 Postre de Oreo y 1 Budweiser": 9000
+        "6 Panes Integrales": 400,
+        "5 Panes recubiertos de Chocolate": 550,
+        "3 Pasteles de Vainilla": 1300,
+        "4 Postres de Oreo": 2500,
+        "1 Pan con Salchicha y 1 Pony Malta": 300,
+        "1 Postre de Oreo y 1 Budweiser": 900
     }
 }
-
-# Ejecución del registro de venta
-if __name__ == "__main__":
-    registrar_venta()
